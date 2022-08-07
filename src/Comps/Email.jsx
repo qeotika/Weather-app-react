@@ -11,24 +11,28 @@ function Email() {
     else alert("invalid input ");
   }
   return (
-    <div className=" flex flex-col font-mono text-white font-light text-center ">
+    <div className=" flex flex-col items-center font-mono text-white font-light text-center ">
       <hr className="mt-10 shadow-xl focus:outline-none" />
-      Enter Email and Get The Current Weather Daily!
+      <p className=" font-mono bg-black/50 flex my-6  font-light p-2  shadow-xl focus: outline-dotted">
+        Enter Email and Get The Current Weather Daily!
+      </p>
       <div>
         <UilEnvelope />
-        <input
-          type="email"
-          placeholder="username@gmail.com"
-          onChange={(e) => setMail(e.currentTarget.value)}
-          className="font-mono text-black text-xl font-light p-2 w-full shadow-xl focus:outline-none"
-        />
+        <form>
+          <input
+            type="email"
+            placeholder="username@gmail.com"
+            onChange={(e) => setMail(e.currentTarget.value)}
+            className="font-mono text-black text-xl font-light p-2 w-full shadow-xl focus:outline-none"
+          />
+        </form>
       </div>
-      <div className="font-mono bg-black/50 flex my-6  font-light p-2 w-28 shadow-xl focus:outline-none">
+      <div className="font-mono bg-black/50 flex my-6  font-light p-2 shadow-xl focus: outline-dashed">
         <button
           className="flex justify-center place-items-center text-center"
           onClick={onSub}
         >
-          Subscribe!
+          <p>Subscribe!</p>
         </button>
       </div>
     </div>
