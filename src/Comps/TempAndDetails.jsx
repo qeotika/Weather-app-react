@@ -28,13 +28,13 @@ function TempAndDetails({
 }) {
   return (
     <div>
-      <div className="flex items-center justify-center py-6 text-xl text-orange-300">
+      <div className="flex items-center justify-center py-6 text-xl text-white">
         <p>{details}</p>
       </div>
 
       <div className="flex flex-row items-center justify-between text-white py-3">
         <img src={iconFromUrl(icon)} alt="" className="w-20" />
-        <p className="text-5xl">{`${(temp - 273.15).toFixed()}º`}</p>
+        <p className="text-5xl text-white">{`${(temp - 273.15).toFixed()}º`}</p>
         {/* //kelvin to C  */}
         <div className="flex flex-col space-y-2">
           <div className="flex font-light text-sm items-center justify-center">

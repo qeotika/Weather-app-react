@@ -13,9 +13,10 @@ import {
 } from "./WeatherService/WeatherService";
 import { useEffect } from "react";
 import { useState } from "react";
+import Understand from "./Comps/Understand";
+import Email from "./Comps/Email";
 
 function App() {
-
   // const obj = {
   //   timezone: "",
   //   daily: [],
@@ -38,7 +39,6 @@ function App() {
   // }
 
   const [query, setQuery] = useState({ q: "jerusalem" });
-  const [units, setUnits] = useState("metric");
   const [weather, setWeather] = useState(null);
   useEffect(() => {
     const fetchWeather = async () => {
@@ -51,18 +51,22 @@ function App() {
     fetchWeather();
   }, [query]);
   return (
-    <div className="mx-auto max-w-screen-md mt-4 py-5 px-32 bg-gradient-to-br from-gray-800 to-sky-400 h-fit shadow-xl shadow-gray-400">
-      <TopButtons />
-      <Inputs />
+    <div className="mx-auto max-w-screen-2xl mt-4 py-6 px-32 bg-gradient-to-br from-gray-800 to-sky-400 h-fit shadow-xl shadow-gray-400">
+      <Inputs setQuery={setQuery} />
+      <TopButtons setQuery={setQuery} />
+      <Understand />
       {weather && (
         <div>
           <TimeLocation weather={weather} />
           <TempAndDetails weather={weather} />
-          <WeatherForecast title={"Hourly forecast"} items={weather.hourly} /> 
+          <WeatherForecast title={"Hourly forecast"} items={weather.hourly} />
           {/* //Objects in js do not have .map().Only arrays */}
           <WeatherForecast title="Daily forescast" items={weather.daily} />
         </div>
       )}
+      <div>
+        <Email />
+      </div>
     </div>
   );
 }
