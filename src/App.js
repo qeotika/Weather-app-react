@@ -51,7 +51,7 @@ function App() {
     fetchWeather();
   }, [query]);
   return (
-    <div className="mx-auto max-w-screen-2xl mt-4 py-6 px-32 bg-gradient-to-br from-gray-800 to-sky-400 h-fit shadow-xl shadow-gray-400">
+    <div className="mx-auto max-w-screen-2xl py-6 px-32 bg-gradient-to-br from-gray-800 to-sky-400 h-fit shadow-xl shadow-gray-400">
       <Inputs setQuery={setQuery} />
       <TopButtons setQuery={setQuery} />
       <Understand />

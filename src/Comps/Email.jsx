@@ -13,7 +13,7 @@ function Email() {
   return (
     <div className=" flex flex-col items-center font-mono text-white font-light text-center ">
       <hr className="mt-10 shadow-xl focus:outline-none" />
-      <p className=" font-mono bg-black/50 flex my-6  font-light p-2  shadow-xl focus: outline-dotted">
+      <p className=" font-mono bg-black/50 flex my-6  font-light p-2  shadow-xl">
         Enter Email and Get The Current Weather Daily!
       </p>
       <div>
