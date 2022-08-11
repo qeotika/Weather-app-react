@@ -1,7 +1,7 @@
 {
   "name": "weather-app",
   "version": "0.1.0",
-  "homepage": "https://qeotika.github.io/weather-app",
+  "homepage": "https://qeotika.github.io/Weather-app-react",
   "private": true,
   "dependencies": {
     "@iconscout/react-unicons": "^1.1.6",
