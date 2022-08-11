@@ -45,7 +45,6 @@ function Email() {
           <p>Subscribe!</p>
         </button>
       </div>{" "}
-      */}
     </div>
   );
 }
