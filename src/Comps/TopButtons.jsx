@@ -28,7 +28,7 @@ function TopButtons({ setQuery }) {
       {cities.map((city) => (
         <button
           key={city.id}
-          className="text-white text-lg font-medium cursor-pointer transition ease-out hover:scale-125"
+          className="text-white text-lg font-medium shadow-xl cursor-pointer transition ease-out hover:scale-125"
           onClick={() => {
             setQuery({ q: city.title });
             console.log(city.title);
