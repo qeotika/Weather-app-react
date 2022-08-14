@@ -1,0 +1,55 @@
+.start_Input {
+  display: flex;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  flex-direction: row;
+  justify-content: center;
+}
+.inner_Start_Input {
+  display: flex;
+  margin-left: 1rem;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.input_prop {
+  padding: 0.5rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 300;
+  text-transform: capitalize;
+  width: 100%;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+.icon_prop {
+  height: 20px;
+  white-space: 20px;
+  display: flex;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition-property: background-color, border-color, color, fill, stroke,
+    opacity, box-shadow, transform;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  color: #ffffff;
+  flex-direction: row;
+  justify-content: center;
+  cursor: pointer;
+}
+.icon_prop:hover {
+  transform: scale(1.25);
+  transition: ease-out;
+}
+.select_city {
+  display: flex;
+  padding: 0.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+  font-weight: 300;
+  flex-direction: row;
+  justify-content: center;
+  width: 20rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}

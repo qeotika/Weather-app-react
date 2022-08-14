@@ -1,0 +1,26 @@
+.my_time_zone {
+  display: flex;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  justify-content: center;
+}
+.inner_time_zone {
+  color: #ffffff;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 200;
+}
+.name_country {
+  display: flex;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  justify-content: center;
+}
+.name_country_inner {
+  color: sandybrown;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 500;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
