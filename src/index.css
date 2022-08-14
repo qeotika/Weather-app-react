@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import "Comps/Email/Email.css";
+@import "Comps/Inputs/Inputs.css";
+@import "Comps/TempAndDetails/TempAndDetails.css";
+@import "Comps/TimeLocation/TimeLocation.css";
+@import "Comps/TopButtons/TopButtons.css";
+@import "Comps/Understand/Understand.css";
+@import "Comps/WeatherForecast/weatherForecast.css";

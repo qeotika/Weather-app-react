@@ -16,7 +16,7 @@ function Inputs({ setQuery }) {
 
   function setCityIfExists() {
     if (city !== "") {
-      setQuery({ q: city });
+      setQuery({ q: city.split("/[, ]/)"[0]) });
 
       console.log(city);
     }
@@ -32,11 +32,23 @@ function Inputs({ setQuery }) {
   useEffect(() => {
     document.addEventListener("keydown", detectKeyDown, true);
   }, []);
-  const handleSelect = async (value) => {};
+
+  const handleSelect = async (value) => {
+    console.log(value + "handleSelect");
+    const result = await geocodeByAddress(value);
+    // const latLng = await getLatLng(result[0]);
+    // console.log(value + "handleSelect2:");
+    setCity(result[0].address_components[0].short_name);
+    console.log(city + " actual value sent to openweathermap");
+
+    setCityIfExists();
+  };
 
   return (
-    <div className="flex flex-row justify-center my-6">
-      <div className="flex flex-row w-3/4 items-center justify-center space-x-4">
+    <div className="start_Input">
+      {/* flex flex-row justify-center my-6 */}
+      <div className="inner_Start_Input">
+        {/* flex flex-row w-3/4 items-center justify-center space-x-4 */}
         <PlacesAutocomplete
           value={city}
           onChange={setCity}
@@ -51,33 +63,43 @@ function Inputs({ setQuery }) {
             <div>
               <input
                 {...getInputProps({
-                  placeholder: "Search Places ...",
-                  className: "location-search-input",
+                  placeholder: "Search City ...",
+                  className: "input_prop",
+                  // "text-xl font-light p-2 w-full shadow-xl focus:outline-none capitalize",
                 })}
               />
               <div>
                 {loading ? <div>...loading</div> : null}
                 {suggestions.map((suggestion) => {
-                  return <div>{suggestion.description}</div>;
+                  const style = {
+                    backgroundColor: suggestion.active ? "#41b6e6" : "#fff",
+                  };
+                  return (
+                    <div {...getSuggestionItemProps(suggestion, { style })}>
+                      {suggestion.description}
+                    </div>
+                  );
                 })}
               </div>
             </div>
           )}
         </PlacesAutocomplete>
-        <input
+        {/* <input
           value={city}
           onChange={(e) => setCity(e.currentTarget.value)}
           onKeyPress={detectKeyDown}
           type="text"
           placeholder="Search City..."
           className="text-xl font-light p-2 w-full shadow-xl focus:outline-none capitalize"
-        />
+        /> */}
         <UilSearch
           onClick={setCityIfExists}
           size={50}
-          className="text-white cursor-pointer transition ease-out hover:scale-125 flex flex-row  justify-center my-6"
+          className="icon_prop"
+          // text-white cursor-pointer transition ease-out hover:scale-125 flex flex-row  justify-center my-6
         />
-        <div className="flex flex-row justify-center my-6 text-white font-light p-2 w-80 shadow-xl focus:outline-none">
+        <div className="select_city">
+          {/* "flex flex-row justify-center my-6 text-white font-light p-2 w-80 shadow-xl focus:outline-none" */}
           Select City
         </div>
       </div>
